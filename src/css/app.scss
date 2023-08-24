@@ -1,0 +1,344 @@
+// app global css in SCSS form
+
+:root {
+  --q-primary: #1aa3a9;
+  --q-secondary: #ffde59;
+  --q-accent: #ffde59;
+  --q-positive: #4ade80;
+  --q-negative: #fa7474;
+  --q-info: #31ccec;
+  --q-warning: #f2c037;
+  --q-dark: #1d1d1d;
+  --q-dark-page: #121212;
+}
+
+body {
+  min-width: 100px;
+  min-height: 100%;
+  font-family: Roboto, -apple-system, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.q-drawer {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.bg-primary-lighter {
+  background-color: #b4f1f4;
+}
+
+.bg-primary-darker {
+  background-color: #09383a;
+}
+
+.bg-primary-lighest {
+  background-color: #cbf5f7;
+}
+
+.container {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-wider {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 960px) {
+  .q-header,
+  .q-header .q-toolbar {
+    height: 64px;
+  }
+}
+
+.title-wrapper {
+  display: inline-block;
+  margin-top: -6px;
+}
+
+.q-item.q-router-link--active,
+.q-item--active {
+  color: var(--q-primary);
+}
+
+.title-sub {
+  position: absolute;
+  bottom: -12px;
+  right: 12px;
+  color: #127074;
+  font-size: 0.66em;
+}
+
+.icon {
+  color: #09383a;
+  background-color: #b4f1f4;
+  vertical-align: sub;
+  padding: 6px;
+  border-radius: 24px;
+}
+
+.q-btn .q-icon,
+.q-btn .q-spinner {
+  font-size: 1.715em;
+}
+
+#main-header {
+  min-height: calc(100vh - 64px);
+}
+
+.bg-primary-ligher table * {
+  background-color: #eefcfc;
+}
+
+.q-btn:not(.q-btn--flat) {
+  background-color: #ffde59;
+  color: #000c;
+  border-radius: 10px;
+}
+
+.q-header .q-toolbar .q-avatar {
+  margin-top: -2px;
+}
+
+@media (min-width: 960px) {
+  .q-header,
+  .q-header .q-toolbar {
+    height: 64px;
+  }
+
+  .q-header .q-toolbar .q-avatar {
+    height: 36px;
+    width: 36px;
+    margin-top: -4px;
+  }
+}
+
+@media (min-width: 700px) {
+  .btn-big {
+    font-size: 18px;
+  }
+}
+
+.fancy-underline {
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(transparent, transparent),
+    linear-gradient(to right, #21ced5, #1aa3a9);
+  background-repeat: no-repeat;
+  background-position: 120%, 122%, 0 130%;
+  background-size: 100% 9px;
+}
+
+.q-btn--fab .q-btn__content {
+  gap: 4px;
+}
+
+.q-btn:not(.q-btn--flat) {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.q-btn:not(.q-btn--flat) {
+  background-color: #ffde59;
+  color: #000c;
+  border-radius: 10px;
+}
+
+.speaker-btn {
+  min-height: unset;
+  min-width: unset;
+  padding: 4px;
+  margin: -4px 4px -4px -4px;
+}
+
+.q-table td:not(:last-of-type),
+.q-table th:not(:last-of-type) {
+  padding: 7px 0 7px 16px;
+}
+
+table td,
+table th {
+  white-space: normal !important;
+  overflow-wrap: break-word;
+}
+
+table th {
+  text-transform: uppercase;
+}
+
+table th > span {
+  display: flex;
+  text-align: left;
+}
+
+table td,
+table tr,
+table th {
+  height: auto;
+  min-height: 24px;
+}
+
+table tbody {
+  overflow: auto;
+}
+
+.q-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.check-button {
+  background-color: #ffde59;
+}
+
+.check-button .q-btn__content .on-left.q-icon {
+  margin-right: 6px !important;
+  margin-left: -2px;
+}
+
+.site--exercise .gap-td {
+  padding: 0 !important;
+}
+
+.site--exercise .gap-td * {
+  font-size: inherit !important;
+}
+
+.site--exercise .gap-td > *,
+.site--exercise .gap-td .q-field__control {
+  height: 100%;
+}
+
+.site--exercise .gap-input {
+  height: 100%;
+  background-color: #e1f9fa11;
+  cursor: text;
+  min-width: 6em;
+}
+
+.site--exercise .gap-input.q-field--highlighted .q-field__control:before {
+  background-color: #e9fbfcbb;
+}
+
+.site--exercise
+  .gap-input.q-field--highlighted.q-field--dark
+  .q-field__control:before {
+  background-color: #0c4e50bb;
+}
+
+.site--exercise .q-field__control {
+  padding: 0 8px;
+}
+
+.site--exercise .q-table--dense td {
+  height: 36px !important;
+}
+
+@media screen and (min-width: 600px) {
+  .site--exercise .q-field__control {
+    padding: 0 16px;
+  }
+}
+
+.site--exercise .section {
+  min-height: 300px;
+}
+
+.site--exercise .bg-negative2 {
+  background-color: #fee0e0 !important;
+}
+
+.site--exercise .bg-positive2 {
+  background-color: #c3f4d5 !important;
+}
+
+.input-edit-icon {
+  opacity: 0.6;
+  margin-bottom: 0;
+}
+
+.q-field__prepend {
+  height: 100%;
+}
+
+.drag-elem {
+  position: relative;
+}
+
+td:hover.draggable-gap:not(.bg-negative2):not(.bg-positive2) {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.drop-elem {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 40;
+  top: -1px;
+  left: -1px;
+}
+
+.drag-handle-icon {
+  z-index: 50;
+  opacity: 0.45;
+  width: 20px;
+  margin: -0.5em -0.05em -0.5em -0.75em;
+  padding: 0.5em;
+  vertical-align: bottom;
+}
+
+:not(.isDragging) .drag-handle-icon {
+  cursor: grab;
+}
+
+.drag-handle {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 600px) {
+  .draggable-gap .drag-handle {
+    cursor: grab;
+  }
+}
+
+.isDragging .drag-handle-icon {
+  z-index: 30 !important;
+}
+
+@media (min-width: 600px) {
+  .drag-handle-icon {
+    margin: -0.5em -0.1em -0.5em -0.75em;
+    padding: 0.5em;
+  }
+}
+
+.drop-highlight,
+.sortable-swap-highlight {
+  background: #29969a !important;
+  color: #fff;
+}
+
+.draggable-gap {
+  transition: background 0.12s ease-in, color 0.1 ease-in !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.q-table .test-cell {
+  border: 1px solid #ccc;
+  text-align: left;
+}
+.q-table .red-cell {
+  background-color: red !important;
+  color: white !important;
+}
