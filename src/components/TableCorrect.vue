@@ -11,55 +11,32 @@
       <q-table
         square
         class="no-shadow"
+        :dense="true"
         :rows="tableData"
         :columns="tableColumns"
         row-key="name"
         :rows-per-page-label="`Verbs per page:`"
         :pagination="pagination"
       >
-        <template v-slot:body-cell-base_form="props">
-          <q-td :props="props">
-            <q-btn
-              flat
-              round
-              color="primary"
-              class="speaker-btn"
-              icon="volume_up"
-              @click="playAudio(props.value)"
-            ></q-btn>
-            {{ props.value }}
-          </q-td>
-        </template>
-        <template v-slot:body-cell-past_simple="props">
-          <q-td :props="props">
-            <q-btn
-              flat
-              round
-              color="primary"
-              class="speaker-btn"
-              icon="volume_up"
-              @click="playAudio(props.value)"
-            ></q-btn>
-            {{ props.value }}
-          </q-td>
-        </template>
-        <template v-slot:body-cell-past_participle="props">
-          <q-td :props="props">
-            <q-btn
-              flat
-              round
-              color="primary"
-              class="speaker-btn"
-              icon="volume_up"
-              @click="playAudio(props.value)"
-            ></q-btn>
-            {{ props.value }}
-          </q-td>
-        </template>
-        <template v-slot:body-cell-polish="props">
-          <q-td :props="props">
-            {{ props.value }}
-          </q-td>
+        <template v-slot:body-cell="{ row, col }">
+          <template v-if="speechIconInColumns.indexOf(col.name) != -1">
+            <q-td>
+              <q-btn
+                flat
+                round
+                color="primary"
+                class="speaker-btn"
+                icon="volume_up"
+                @click="playAudio(row[col.name])"
+              ></q-btn>
+              {{ row[col.name] }}
+            </q-td>
+          </template>
+          <template v-else>
+            <q-td>
+              {{ row[col.name] }}
+            </q-td>
+          </template>
         </template>
       </q-table>
     </q-card-section>
@@ -82,6 +59,12 @@ export default defineComponent({
         return [];
       },
     },
+    speechIconInColumns: {
+      type: Array,
+      default() {
+        return [];
+      },
+    },
     tableData: {
       type: Array,
       default() {
@@ -93,7 +76,7 @@ export default defineComponent({
     async playAudio(name) {
       if (name) {
         try {
-          const audio = new Audio(`src/assets/speech/${name}.mp3`);
+          const audio = new Audio(`speech/${name}.mp3`);
           audio.play();
         } catch (error) {
           console.error("Error loading audio file:", error);

@@ -1,5 +1,6 @@
 const table1Data = {
   title: "OK",
+  speechIconInColumns: ["base_form", "past_simple", "past_participle"],
   tableColumns: [
     {
       name: "base_form",

@@ -7,7 +7,7 @@
           <div class="col">
             <q-btn
               class="non-selectable no-outline"
-              label="COLUMN 1"
+              :label="title"
               @click="handleReTestClick()"
             ></q-btn>
           </div>
@@ -15,16 +15,10 @@
         <div class="row q-my-md">
           <div class="col">
             <template v-if="enableDnD == true">
-              <TablesDnD
-                v-bind="this.tableContentData"
-                :ref="keyRef"
-              ></TablesDnD>
+              <TablesDnD v-bind="tableData" :ref="keyRef"></TablesDnD>
             </template>
             <template v-else>
-              <tables-test
-                v-bind="this.tableContentData"
-                :ref="keyRef"
-              ></tables-test>
+              <tables-test v-bind="tableData" :ref="keyRef"></tables-test>
             </template>
           </div>
         </div>
@@ -53,6 +47,12 @@ export default defineComponent({
     TablesDnD: defineAsyncComponent(() => import("./TableDnD.vue")),
   },
   props: {
+    title: {
+      type: String,
+      default() {
+        return "COLUMN 1";
+      },
+    },
     keyRef: {
       type: String,
       default() {
@@ -69,11 +69,6 @@ export default defineComponent({
         return false;
       },
     },
-  },
-  data() {
-    return {
-      tableContentData: this.tableData,
-    };
   },
   methods: {
     handleReTestClick() {

@@ -22,7 +22,6 @@
               'red-cell':
                 checkState == 'checked' &&
                 row[col.name + '_test'] !== '-1' &&
-                row[col.name + '_test'] !== '' &&
                 row[col.name + '_test'] !== row[col.name],
             }"
           >
@@ -41,7 +40,11 @@
               </div>
             </template>
             <template v-else>
-              <q-input class="gap-input" v-model="row[col.name + '_test']" />
+              <q-input class="gap-input" v-model="row[col.name + '_test']">
+                <template v-slot:prepend>
+                  <q-icon name="edit" />
+                </template>
+              </q-input>
             </template>
           </q-td>
         </template>
