@@ -64,6 +64,7 @@
       <q-toolbar>
         <q-toolbar-title class="container-wider text-subtitle2">
           © 2023 The Best Irregular Verbs |
+          <router-link to="/privacy-policy">Privacy Policy</router-link>
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>

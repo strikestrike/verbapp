@@ -76,7 +76,13 @@ export default defineComponent({
     async playAudio(name) {
       if (name) {
         try {
-          const audio = new Audio(`speech/${name}.mp3`);
+          const audio = new Audio(
+            `speech/${name
+              .replace(/\(/g, "")
+              .replace(/\)/g, "")
+              .replace(/ /g, "-")
+              .replace(/\//g, "-")}.mp3`
+          );
           audio.play();
         } catch (error) {
           console.error("Error loading audio file:", error);
